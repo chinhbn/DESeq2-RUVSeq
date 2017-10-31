@@ -81,4 +81,37 @@ pData(setk)
 plotRLE(setk, outline=FALSE, ylim=c(-4, 4), col=colors[colData$Condition])
 plotPCA(setk, col=colors[colData$Condition], cex=1.2)
 
-
+             
+toLatex(sessionInfo())
+\begin{itemize}\raggedright
+  \item R version 3.4.2 (2017-09-28), \verb|x86_64-apple-darwin15.6.0|
+  \item Locale: \verb|C|
+  \item Running under: \verb|macOS Sierra 10.12.6|
+  \item Matrix products: default
+  \item BLAS: \verb|/Library/Frameworks/R.framework/Versions/3.4/Resources/lib/libRblas.0.dylib|
+  \item LAPACK: \verb|/Library/Frameworks/R.framework/Versions/3.4/Resources/lib/libRlapack.dylib|
+  \item Base packages: base, datasets, grDevices, graphics, methods,
+    stats, utils
+  \item Loaded via a namespace (and not attached):
+    AnnotationDbi~1.38.2, Biobase~2.36.2, BiocGenerics~0.22.1,
+    BiocParallel~1.10.1, Biostrings~2.44.2, DBI~0.7, DESeq2~1.16.1,
+    DelayedArray~0.2.7, Formula~1.2-2, GenomeInfoDb~1.12.3,
+    GenomeInfoDbData~0.99.0, GenomicAlignments~1.12.2,
+    GenomicFeatures~1.28.5, GenomicRanges~1.28.6, Hmisc~4.0-3,
+    IRanges~2.10.5, Matrix~1.2-11, RColorBrewer~1.1-2, RCurl~1.95-4.8,
+    RSQLite~2.0, Rcpp~0.12.13, Rsamtools~1.28.0, S4Vectors~0.14.7,
+    SummarizedExperiment~1.6.5, XML~3.98-1.9, XVector~0.16.0,
+    acepack~1.4.1, annotate~1.54.0, backports~1.1.1, base64enc~0.1-3,
+    biomaRt~2.32.1, bit~1.1-12, bit64~0.9-7, bitops~1.0-6, blob~1.1.0,
+    checkmate~1.8.5, cluster~2.0.6, colorspace~1.3-2, compiler~3.4.2,
+    data.table~1.10.4-2, digest~0.6.12, foreign~0.8-69,
+    genefilter~1.58.1, geneplotter~1.54.0, ggplot2~2.2.1, grid~3.4.2,
+    gridExtra~2.3, gtable~0.2.0, htmlTable~1.9, htmltools~0.3.6,
+    htmlwidgets~0.9, knitr~1.17, lattice~0.20-35, latticeExtra~0.6-28,
+    lazyeval~0.2.0, locfit~1.5-9.1, magrittr~1.5, matrixStats~0.52.2,
+    memoise~1.1.0, munsell~0.4.3, nnet~7.3-12, pROC~1.10.0,
+    parallel~3.4.2, plyr~1.8.4, rlang~0.1.2, rpart~4.1-11,
+    rtracklayer~1.36.6, scales~0.5.0, splines~3.4.2, stats4~3.4.2,
+    stringi~1.1.5, stringr~1.2.0, survival~2.41-3, tibble~1.3.4,
+    tools~3.4.2, xtable~1.8-2, zlibbioc~1.22.0
+\end{itemize}
