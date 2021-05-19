@@ -1,0 +1,32 @@
+dir="~/IndividualCancers/"
+rnaseq.data=list.files(path=dir,full.names=TRUE)
+
+read.file=function(rnaseq.data){
+  load(rnaseq.data)
+  meta=colData(data)
+  normal=rownames(meta)[meta$definition%in%c("Solid Tissue Normal")]
+  normal=gsub("-","\\.",normal)
+  fpkm=data.frame(assay(data))
+  tpm<- do.call(cbind, lapply(1:ncol(fpkm), function(i){
+    x = as.matrix(fpkm[,i]/colSums(as.matrix(fpkm[i])))
+    t(t(x) *10^6)
+  }))
+  colnames(tpm)=colnames(fpkm)
+  rownames(tpm)=rownames(fpkm)
+  tpm.norm= tpm[rownames(tpm)%in%gene,colnames(tpm)%in%normal]#gene:3530 metabolic genes
+  median.tpm.norm=do.call(rbind,lapply(1:nrow(as.matrix(tpm.norm)), function(i){
+    x=as.matrix(median((tpm.norm)[i,]))
+    as.matrix(t(x))
+  }))
+  median.tpm.norm=data.frame(row.names = gene, median.tpm.norm)
+}
+
+
+median.tpm.norm=read.file(rnaseq.data[1])
+for (i in 2:16){
+  print(i)
+  median.tpm.norm<-cbind(median.tpm.norm,read.file(rnaseq.data[i]))
+}
+
+
+dim(median.tpm.norm)
